@@ -11,6 +11,9 @@ const allowedOrigins = [
   "https://cloudfiler.vercel.app",
   "https://uhdbuilder.vercel.app",
   "https://uhdpjs.vercel.app",
+  "https://gamesbuilder.vercel.app",
+  "https://caterpillarjs.vercel.app",
+
   "http://localhost:5173",
 ];
 
