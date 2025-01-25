@@ -5,7 +5,7 @@ import { handle } from "hono/vercel";
 import router from "./routes";
 import { wpProxy } from "./middleware/proxy";
 
-const app = new Hono();
+const app = new Hono().basePath(`/api`);
 
 app.use(
   "*",
