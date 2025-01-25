@@ -1,11 +1,11 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
-import { handle } from "hono/vercel";
+import { handle } from "@hono/node-server/vercel";
 
 import router from "./routes";
 import { wpProxy } from "./middleware/proxy";
 
-const app = new Hono().basePath(`/`);
+const app = new Hono();
 
 app.use(
   "*",
@@ -22,11 +22,4 @@ app.route("/", router);
 app.use("/wp-json", wpProxy);
 
 // export default app;
-
-const handler = handle(app);
-
-export const GET = handler;
-export const POST = handler;
-export const PATCH = handler;
-export const PUT = handler;
-export const OPTIONS = handler;
+export default handle(app);
