@@ -21,4 +21,10 @@ app.use(
 app.route("/", router);
 app.use("/wp-json", wpProxy);
 
-export default handle(app);
+const handler = handle(app);
+
+export const GET = handler;
+export const POST = handler;
+export const PATCH = handler;
+export const PUT = handler;
+export const OPTIONS = handler;
