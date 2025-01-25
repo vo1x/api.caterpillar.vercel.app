@@ -1,13 +1,18 @@
-import { createProxyMiddleware } from "http-proxy-middleware";
+import { Context } from "hono";
 
-const baseUrl = "https://image.tmdb.org";
+const BASE_URL = process.env.BASE_URL;
 
-const imageProxy = createProxyMiddleware({
-  target: baseUrl,
-  changeOrigin: true,
-  pathRewrite: {
-    "^/tmdb": "",
-  },
-});
+export const wpProxy = async (c: Context, next: () => Promise<void>) => {
+  const url = new URL(BASE_URL || "https://gamesleech.com");
 
-export default imageProxy;
+  const modifiedHeaders = new Headers();
+
+  Object.entries(c.req.raw.headers).forEach(([key, value]) => {
+    modifiedHeaders.set(key, value as string);
+  });
+
+  modifiedHeaders.set("Origin", url.origin);
+  modifiedHeaders.set("Host", url.hostname);
+
+  return next();
+};

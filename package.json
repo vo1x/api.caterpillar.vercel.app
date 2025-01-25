@@ -1,24 +1,15 @@
 {
-  "dependencies": {
-    "@types/cors": "^2.8.17",
-    "axios": "^1.7.9",
-    "cheerio": "^1.0.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.0",
-    "http-proxy-middleware": "^3.0.2"
-  },
-  "name": "api.caterpillar.vercel.app",
-  "main": "src/app.ts",
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@types/express": "^5.0.0"
-  },
+  "name": "caterpillar-api",
   "scripts": {
-    "start": "bun run src/app.ts",
-    "dev": "bun --watch src/app.ts"
+    "dev": "bun run --hot src/index.ts"
   },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
+  "dependencies": {
+    "@types/cheerio": "^0.22.35",
+    "cheerio": "^1.0.0",
+    "hono": "^4.6.18",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
   }
 }
