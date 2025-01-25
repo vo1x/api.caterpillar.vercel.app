@@ -3,9 +3,8 @@
   "scripts": {
     "dev": "bun run --hot src/index.ts"
   },
-  "type": "module",
   "dependencies": {
-    "@hono/node-server": "^1.13.7",
+
     "@types/cheerio": "^0.22.35",
     "cheerio": "^1.0.0",
     "hono": "^4.6.18",
