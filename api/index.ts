@@ -18,7 +18,7 @@ app.use(
   })
 );
 
-app.use("/wp-json", wpProxy);
 app.route("/", router);
+app.use("/wp-json", wpProxy);
 
 export default handle(app);
