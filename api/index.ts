@@ -3,7 +3,7 @@ import { cors } from "hono/cors";
 import { handle } from "@hono/node-server/vercel";
 
 import router from "./routes";
-import { wpProxy } from "./middleware/proxy";
+import wpProxy from "./middleware/proxy";
 
 const app = new Hono();
 

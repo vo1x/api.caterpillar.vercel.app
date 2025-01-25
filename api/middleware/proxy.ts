@@ -2,7 +2,7 @@ import { Context } from "hono";
 
 const BASE_URL = process.env.BASE_URL;
 
-export const wpProxy = async (c: Context, next: () => Promise<void>) => {
+const wpProxy = async (c: Context, next: () => Promise<void>) => {
   const url = new URL(BASE_URL || "https://gamesleech.com");
 
   const modifiedHeaders = new Headers();
@@ -16,3 +16,5 @@ export const wpProxy = async (c: Context, next: () => Promise<void>) => {
 
   return next();
 };
+
+export default wpProxy;

@@ -1,9 +1,7 @@
 import { Hono } from "hono";
-import {
-  searchController,
-  metadataController,
-  imageController,
-} from "../controllers";
+import searchController from "../controllers/search-controller";
+import metadataController from "../controllers/metadata-controller";
+import imageController from "../controllers/image-controller";
 
 const router = new Hono();
 

@@ -5,7 +5,7 @@ const baseUrl = process.env.BASE_URL;
 import { Context } from "hono";
 import { compressAndResize, fetchImageBuffer } from "../utils";
 
-export const imageController = async (ctx: Context): Promise<any> => {
+const imageController = async (ctx: Context): Promise<any> => {
   const { imageFileName, imageUrl } = await ctx.req.json();
 
   if (!imageUrl || !imageFileName) {
@@ -65,3 +65,5 @@ export const imageController = async (ctx: Context): Promise<any> => {
     return ctx.json({ success: false, error: error.message }, 500);
   }
 };
+
+export default imageController;

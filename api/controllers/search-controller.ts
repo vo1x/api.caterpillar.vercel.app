@@ -3,7 +3,7 @@ import * as cheerio from "cheerio";
 
 import { SearchQueryResult } from "../interfaces/interface";
 
-export const searchController = async (ctx: Context) => {
+const searchController = async (ctx: Context) => {
   const query = ctx.req.query("q");
 
   if (!query || query.trim() === "") {
@@ -52,3 +52,4 @@ export const searchController = async (ctx: Context) => {
     return ctx.json({ success: false, error: error.message }, 500);
   }
 };
+export default searchController;

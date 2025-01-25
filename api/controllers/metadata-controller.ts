@@ -2,7 +2,7 @@ import { Context } from "hono";
 
 import { parseGameDescription, parseSystemRequirements } from "../utils";
 
-export const metadataController = async (ctx: Context) => {
+const metadataController = async (ctx: Context) => {
   const appId = ctx.req.query("appId");
 
   if (!appId || appId.trim() === "") {
@@ -31,3 +31,5 @@ export const metadataController = async (ctx: Context) => {
     return ctx.json({ success: false, error: error.message }, 500);
   }
 };
+
+export default metadataController
